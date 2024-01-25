@@ -1,6 +1,5 @@
 import {Await, NavLink} from '@remix-run/react';
 import {Suspense} from 'react';
-import {useRootLoaderData} from '~/root';
 
 /**
  * @param {HeaderProps}
@@ -29,8 +28,7 @@ export function Header({header, isLoggedIn, cart}) {
  *   viewport: Viewport;
  * }}
  */
-export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
-  const {publicStoreDomain} = useRootLoaderData();
+export function HeaderMenu({menu, viewport}) {
   const className = `header-menu-${viewport}`;
 
   function closeAside(event) {
@@ -42,28 +40,10 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
 
   return (
     <nav className={className} role="navigation">
-      {viewport === 'mobile' && (
-        <NavLink
-          end
-          onClick={closeAside}
-          prefetch="intent"
-          style={activeLinkStyle}
-          to="/"
-        >
-          Home
-        </NavLink>
-      )}
       {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
         if (!item.url) return null;
 
-        // if the url is internal, we strip the domain
-        const url =
-          item.url.includes('myshopify.com') ||
-          item.url.includes(publicStoreDomain) ||
-          item.url.includes(primaryDomainUrl)
-            ? new URL(item.url).pathname
-            : item.url;
-        return (
+        return item.title === 'Catalog' ? (
           <NavLink
             className="header-menu-item"
             end
@@ -71,12 +51,32 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
             onClick={closeAside}
             prefetch="intent"
             style={activeLinkStyle}
-            to={url}
+            to="/collections"
           >
-            {item.title}
+            Nos collections
           </NavLink>
-        );
+        ) : null;
       })}
+      <NavLink
+        className="header-menu-item"
+        end
+        onClick={closeAside}
+        prefetch="intent"
+        style={activeLinkStyle}
+        to="/products"
+      >
+        Tous nos produits
+      </NavLink>
+      <NavLink
+        className="header-menu-item"
+        end
+        onClick={closeAside}
+        prefetch="intent"
+        style={activeLinkStyle}
+        to="/blogs"
+      >
+        Notre histoire
+      </NavLink>
     </nav>
   );
 }

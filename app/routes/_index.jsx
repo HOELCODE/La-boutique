@@ -42,10 +42,7 @@ function FeaturedCollection({collection}) {
   if (!collection) return null;
   const image = collection?.image;
   return (
-    <Link
-      className="featured-collection"
-      to={`/collections/${collection.handle}`}
-    >
+    <Link className="featured-collection" to={`/collections/`}>
       {image && (
         <div className="featured-collection-image">
           <Image data={image} sizes="100vw" />
@@ -64,7 +61,7 @@ function FeaturedCollection({collection}) {
 function RecommendedProducts({products}) {
   return (
     <div className="recommended-products">
-      <h2>Recommended Products</h2>
+      <h2>Les nouveautés chez Papalmier</h2>
       <Suspense fallback={<div>Loading...</div>}>
         <Await resolve={products}>
           {({products}) => (

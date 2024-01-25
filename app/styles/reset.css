@@ -17,7 +17,6 @@ h1 {
   font-weight: 700;
   line-height: 1.4;
   margin-bottom: 2rem;
-  margin-top: 2rem;
 }
 
 h2 {
@@ -43,13 +42,14 @@ p {
 }
 
 a {
-  color: #000;
+  color: #1a1a1a;
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
   cursor: pointer;
+  color: #555555;
+  opacity: 0.5;
 }
 
 hr {
@@ -69,7 +69,7 @@ body {
 }
 
 body > main {
-  margin: 0 1rem 1rem 1rem;
+  margin: 1rem 1rem 1rem 1rem;
 }
 
 section {

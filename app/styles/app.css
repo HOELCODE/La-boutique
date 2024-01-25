@@ -61,6 +61,8 @@ aside header h2 {
 
 aside main {
   margin: 1rem;
+  background-image: url('../assets/cadre-feuilles-palmier.jpg');
+  background-size: 100%;
 }
 
 aside p {
@@ -129,7 +131,7 @@ aside li {
 */
 .header {
   align-items: center;
-  background: #fff;
+  background: #e49eff;
   display: flex;
   height: var(--header-height);
   padding: 0 1rem;
@@ -367,7 +369,8 @@ aside li {
   display: grid;
   grid-gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-width), 1fr));
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
 }
 
 .product-item img {
