@@ -2,7 +2,7 @@
   --aside-width: 400px;
   --cart-aside-summary-height-with-discount: 300px;
   --cart-aside-summary-height: 250px;
-  --grid-item-width: 355px;
+  --grid-item-width: 344px;
   --header-height: 64px;
   --color-dark: #000;
   --color-light: #fff;
@@ -61,8 +61,6 @@ aside header h2 {
 
 aside main {
   margin: 1rem;
-  background-image: url('../assets/cadre-feuilles-palmier.jpg');
-  background-size: 100%;
 }
 
 aside p {
@@ -155,7 +153,7 @@ aside li {
 .header-menu-desktop {
   display: none;
   grid-gap: 1rem;
-  @media (min-width: 45em) {
+  @media (min-width: 48em) {
     display: flex;
     grid-gap: 1rem;
     margin-left: 3rem;
@@ -179,7 +177,7 @@ aside li {
 * --------------------------------------------------
 */
 .footer {
-  background: var(--color-dark);
+  background: #e49eff;
   margin-top: auto;
 }
 
@@ -192,7 +190,8 @@ aside li {
   align-items: center;
   display: flex;
   grid-gap: 1rem;
-  padding: 1rem;
+  padding-left: 1rem;
+  height: 64px;
 }
 
 .footer-menu a {
@@ -370,7 +369,6 @@ aside li {
   grid-gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-width), 1fr));
   margin-bottom: 1rem;
-  padding: 1rem;
 }
 
 .product-item img {
@@ -473,4 +471,29 @@ aside li {
 
 .account-logout {
   display: inline-block;
+}
+
+/*
+* --------------------------------------------------
+* Banner
+* --------------------------------------------------
+*/
+
+.banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.banner-left {
+  background-image: url('../assets/banner-palmier-gauche.jpeg');
+  background-size: 100%;
+  background-size: cover;
+}
+
+.banner-droit {
+  background-image: url('../assets/banner-palmier-droit.jpeg');
+  background-size: 100%;
+  background-size: cover;
 }

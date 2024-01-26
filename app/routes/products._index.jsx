@@ -57,7 +57,6 @@ function ProductsGrid({products}) {
 function ProductItem({product, loading}) {
   const variant = product.variants.nodes[0];
   const variantUrl = useVariantUrl(product.handle, variant.selectedOptions);
-  console.log(product);
   return (
     <Link
       className="product-item"

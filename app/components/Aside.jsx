@@ -13,6 +13,7 @@
  *   id?: string;
  * }}
  */
+
 export function Aside({children, heading, id = 'aside'}) {
   return (
     <div aria-modal className="overlay" id={id} role="dialog">
